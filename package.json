@@ -1,5 +1,5 @@
 {
-  "name": "npm-move-all-issues-in-projects-to-other-project",
+  "name": "move-all-issues-in-projects-to-other-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HiromiShikata/npm-move-all-issues-in-projects-to-other-project.git"
+    "url": "git+https://github.com/HiromiShikata/npm-pkg-move-all-issues-in-projects-to-other-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HiromiShikata/npm-move-all-issues-in-projects-to-other-project/issues"
+    "url": "https://github.com/HiromiShikata/npm-pkg-move-all-issues-in-projects-to-other-project/issues"
   },
-  "homepage": "https://github.com/HiromiShikata/npm-move-all-issues-in-projects-to-other-project#readme",
+  "homepage": "https://github.com/HiromiShikata/npm-pkg-move-all-issues-in-projects-to-other-project#readme",
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
