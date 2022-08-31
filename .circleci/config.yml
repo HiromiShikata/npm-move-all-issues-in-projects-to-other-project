@@ -14,6 +14,9 @@ jobs:
       - run: npm run format && exit $(git diff | wc -l)
       - run: npx commitlint --from=main
       - run: npm run build
+      - run: npm run test:models
+      - run: npm run test:usecases
+      - run: npm run test:adapters
       - run: npm run test
       - store_test_results:
           path: reports/jest-junit

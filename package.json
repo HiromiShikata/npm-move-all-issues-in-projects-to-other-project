@@ -8,6 +8,9 @@
     "lint": "eslint src --fix",
     "format": "npm run prettier && npm run lint",
     "build": "tsc",
+    "test:models": "jest src/models --collectCoverageFrom=src/models/**/*",
+    "test:usecases": "jest src/usecases --collectCoverageFrom=src/usecases/**/*",
+    "test:adapters": "jest src/adapters --collectCoverageFrom=src/adapters/**/*",
     "test": "jest"
   },
   "repository": {
