@@ -1,0 +1,38 @@
+version: 2.1
+
+executors:
+  node:
+    resource_class: small
+    docker:
+      - image: cimg/node:18.7.0
+jobs:
+  build-lint-test:
+    executor: node
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run format && exit $(git diff | wc -l)
+      - run: npm run build
+      - run: npm run test
+  publish:
+    executor: node
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
+      - run: npx semantic-release
+
+
+workflows:
+  build-lint-test:
+    jobs:
+      - build-lint-test
+      - publish:
+          requires:
+            - build-lint-test
+          context: oss
+          filters:
+            branches:
+              only: main
+
+
