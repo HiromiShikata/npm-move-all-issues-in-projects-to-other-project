@@ -21,6 +21,17 @@
     "url": "https://github.com/HiromiShikata/npm-move-all-issues-in-projects-to-other-project/issues"
   },
   "homepage": "https://github.com/HiromiShikata/npm-move-all-issues-in-projects-to-other-project#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "branches": [
+      "main"
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
