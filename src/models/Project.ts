@@ -1,3 +1,1 @@
-export default class Project{
-
-}
+export default class Project {}

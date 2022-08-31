@@ -1,3 +1,1 @@
-export default class Issue{
-
-}
+export default class Issue {}
