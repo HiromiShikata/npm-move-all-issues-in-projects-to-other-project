@@ -1,5 +1,5 @@
-import Project from "../../models/Project";
+import Project from '../../models/Project';
 
 export default interface ProjectRepository {
-    get(name: string): Promise<Project | undefined>
+  get(name: string): Promise<Project | undefined>;
 }
