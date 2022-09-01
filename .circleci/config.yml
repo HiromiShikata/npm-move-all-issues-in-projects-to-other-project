@@ -33,7 +33,8 @@ jobs:
 workflows:
   build-lint-test:
     jobs:
-      - build-lint-test
+      - build-lint-test:
+          context: oss
       - publish:
           requires:
             - build-lint-test
