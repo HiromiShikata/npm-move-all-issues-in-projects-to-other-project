@@ -2,28 +2,9 @@ import ProjectRepository from '../../usecases/repositories/ProjectRepository';
 import Project from '../../models/Project';
 import { Octokit } from 'octokit';
 import { graphql, GraphQlQueryResponseData } from '@octokit/graphql';
+import OctokitRepository from "./OctokitRepository";
 
-export default class OctokitProjectRepository implements ProjectRepository {
-  private readonly url: string;
-  private readonly graphqlWithAuth: typeof graphql;
-  private readonly octokit: Octokit;
-  constructor(
-    readonly ownerName: string,
-    readonly repositoryName: string,
-    private readonly githubTokenParam: string,
-  ) {
-    this.url = `https://github.com/${ownerName}/${repositoryName}`;
-    const githubToken = githubTokenParam || '';
-    if (githubToken === '') throw Error(`no github token`);
-    this.graphqlWithAuth = graphql.defaults({
-      headers: {
-        authorization: `token ${githubToken}`,
-        accept: 'application/vnd.github.inertia-preview+json',
-      },
-    });
-    this.octokit = new Octokit({ auth: githubToken });
-  }
-
+export default class OctokitProjectRepository extends OctokitRepository implements ProjectRepository {
   get = async (name: string): Promise<Project | undefined> => {
     const query = this.buildQueryGetProject(this.url, name, 5);
     const res: GraphQlQueryResponseData = await this.graphqlWithAuth(query);

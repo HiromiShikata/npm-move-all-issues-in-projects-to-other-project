@@ -3,17 +3,6 @@ import OctokitProjectRepository from './OctokitProjectRepository';
 describe('OctokitProjectRepository', () => {
   const ownerName = 'HiromiShikata';
   const repositoryName = 'npm-pkg-move-all-issues-in-projects-to-other-project';
-  describe('constructor', () => {
-    test('empty github token', () => {
-      try {
-        new OctokitProjectRepository(ownerName, repositoryName, '');
-        fail();
-      } catch (e) {
-        expect(e).toBeInstanceOf(Error);
-        expect((e as Error).message).toEqual('no github token');
-      }
-    });
-  });
   describe('get', () => {
     const repo = new OctokitProjectRepository(
       ownerName,
