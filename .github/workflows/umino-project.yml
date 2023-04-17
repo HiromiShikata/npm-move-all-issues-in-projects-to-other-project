@@ -35,7 +35,7 @@ jobs:
     if: github.event.action == 'opened' || github.event.action == 'reopened'
     steps:
       - name: Move issue to ${{ env.inbox }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ env.gh_project_token }}
           user: ${{ env.user }}
@@ -48,7 +48,7 @@ jobs:
     if: github.event.action == 'assigned' || github.event.action == 'unassigned'
     steps:
       - name: Move issue to ${{ env.inbox }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ env.gh_project_token }}
           user: ${{ env.user }}
@@ -64,7 +64,7 @@ jobs:
     if: github.event.action == 'labeled' && github.event.label.name == 'working right now'
     steps:
       - name: Move issue to ${{ env.in_progress }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ env.gh_project_token }}
           user: ${{ env.user }}
@@ -76,7 +76,7 @@ jobs:
     if: github.event.action == 'unlabeled' && github.event.label.name == 'working right now'
     steps:
       - name: Move issue to ${{ env.todo }}
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ env.gh_project_token }}
           user: ${{ env.user }}
